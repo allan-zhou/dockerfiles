@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  angular-demo:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      # - ./dist/:/www/angular-demo
+      - ./dist:/usr/share/nginx/html/angular-demo
+      - ./images:/usr/share/nginx/html/images
+      - ./conf/myNginx.conf:/etc/nginx/nginx.conf:ro
+    command: ["nginx", "-g", "daemon off;"]
+    container_name: angular-demo5
