@@ -5,10 +5,11 @@ services:
     image: nginx
     ports:
       - "80:80"
-      - "3000:3000"
     volumes:
       - ./dist/:/www/angular-demo
       - ./images:/www/images
-      - ./conf/mix.nginx.conf:/etc/nginx/nginx.conf:ro
+      # - ./dist:/usr/share/nginx/html/angular-demo
+      # - ./images:/usr/share/nginx/html/images
+      - ./conf/myNginx.conf:/etc/nginx/nginx.conf:ro
     command: ["nginx", "-g", "daemon off;"]
-    container_name: angular-demo
+    container_name: angular-demo2

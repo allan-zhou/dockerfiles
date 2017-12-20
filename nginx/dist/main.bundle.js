@@ -927,7 +927,7 @@ var UserlistTrackbyComponent = (function () {
     }
     UserlistTrackbyComponent.prototype.ngOnInit = function () {
         console.log('ngOnInit  ' + __WEBPACK_IMPORTED_MODULE_1_moment__(Date.now()).format('YYYY-MM-DD HH:mm:ss'));
-        this.oldUsers = __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.clone(this.users);
+        this.oldUsers = __WEBPACK_IMPORTED_MODULE_2_lodash__["clone"](this.users);
     };
     UserlistTrackbyComponent.prototype.ngOnChanges = function (changes) {
         console.log('ngOnChanges  ' + __WEBPACK_IMPORTED_MODULE_1_moment__(Date.now()).format('YYYY-MM-DD HH:mm:ss'));
@@ -945,13 +945,13 @@ var UserlistTrackbyComponent = (function () {
     UserlistTrackbyComponent.prototype.ngDoCheck = function () {
         console.log('ngDoCheck  ' + __WEBPACK_IMPORTED_MODULE_1_moment__(Date.now()).format('YYYY-MM-DD HH:mm:ss'));
         var usersChanged = false;
-        var result = __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.isEqual(this.users, this.oldUsers);
+        var result = __WEBPACK_IMPORTED_MODULE_2_lodash__["isEqual"](this.users, this.oldUsers);
         if (!result) {
             console.log('users' + JSON.stringify(this.users));
             console.log('oldUsers' + JSON.stringify(this.oldUsers));
             usersChanged = true;
             this.usersChangeTimes += 1;
-            this.oldUsers = __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.clone(this.users);
+            this.oldUsers = __WEBPACK_IMPORTED_MODULE_2_lodash__["clone"](this.users);
             var msg = "users changes  " + this.usersChangeTimes + " times.";
             this.changeLog.push(msg);
         }
